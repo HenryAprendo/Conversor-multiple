@@ -34,13 +34,21 @@ public class Principal {
 			if (entrada.isBlank()) {
 				JOptionPane.showMessageDialog(null, "Valor no valido");
 			}
-			else if (entrada.matches(".*[a-zA-Z0].*")) {
+			else if (!entrada.matches(".*[0-9].*")) {
 				JOptionPane.showMessageDialog(null, "Valor no valido");
 			}
-			else {
-				valor = Double.parseDouble(entrada);
-				esValido = true;
+			else {		
+				try {
+					valor = Double.parseDouble(entrada);
+					esValido = true;
+				}catch(NumberFormatException e) {
+					System.out.println("No es posible combinar caracteres del tipo letras y números");
+					e.getMessage();
+					e.printStackTrace();
+				}
 			}
+			
+			System.out.println("continuando el funcionamiento despues de la excepción");
 			
 		}
 		
