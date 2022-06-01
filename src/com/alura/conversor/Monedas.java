@@ -1,5 +1,4 @@
 package com.alura.conversor;
-import javax.swing.JOptionPane;
 
 public class Monedas extends Conversor {
 	
