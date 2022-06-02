@@ -10,7 +10,6 @@ public class IndexPoint {
 	
 	public static void main(String[] args) {
 		
-		
 		String opcion1 = "Conversor de monedas";
 		String opcion2 = "Conversor de temperatura";
 		String[] opciones = { opcion1, opcion2 };
