@@ -11,6 +11,14 @@ public class Monedas extends Conversor {
 		
 		double resultado = 0;
 		double cambio = 0;
+		String message = "No puede hacer operaciones con valores negativos";
+		
+		//Lanza excepcion para números negativos
+		if (valor < 0) {
+			super.mostrarMensaje(message);
+			throw new NumeroNegativoException(message);
+		}
+		
 		switch (opcion) {
 
 			case "De Pesos a Dolar": {

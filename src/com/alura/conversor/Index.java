@@ -77,7 +77,7 @@ public class Index {
 					seguir = false;
 				}
 
-			} catch (NullPointerException e) {
+			} catch (NullPointerException | NumeroNegativoException e) {
 				System.out.println("Entro en catch");
 				e.printStackTrace();
 				JOptionPane.showMessageDialog(null, "Se ha cancelado la operación");
@@ -88,5 +88,7 @@ public class Index {
 
 		}
 
+		
+		
 	}
 }
