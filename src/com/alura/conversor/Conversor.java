@@ -12,7 +12,7 @@ public abstract class Conversor {
 	
 	// 2.Solicitar dato de entrada
 	public String solicitarDato(String message) {
-		String entrada = JOptionPane.showInputDialog(message);
+		String entrada = JOptionPane.showInputDialog(message);		
 		return entrada;
 		
 	}

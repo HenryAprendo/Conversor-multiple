@@ -1,18 +1,33 @@
 package com.alura.conversor;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+
+
 public class Monedas extends Conversor {
 	
-	public double calcular(double valor, double tazaDeCambio) {
-		return valor * tazaDeCambio;
+	private static double dolar = 3772.33;
+	private static double euro = 4209.69;
+	private static double libra = 4953.76;
+	private static double yen = 30.85;
+	private static double won = 3.12;
+	
+	public String convierteOtraDivisaPeso(double valor, double tazaDeCambio) {		
+		DecimalFormat f = new DecimalFormat();
+		return f.format(valor * tazaDeCambio);
+	}
+	
+	public String conviertePesoOtraDivisa(double valor, double tazaDeCambio) {
+		DecimalFormat f = new DecimalFormat();
+		return f.format(valor / tazaDeCambio);
 	}
 	
 	@Override	
 	public void hacerConversion(String opcion, double valor) {
-		
-		double resultado = 0;
-		double cambio = 0;
+				
+		String resultado;
 		String message = "No puede hacer operaciones con valores negativos";
-		
+
 		//Lanza excepcion para números negativos
 		if (valor < 0) {
 			super.mostrarMensaje(message);
@@ -22,62 +37,52 @@ public class Monedas extends Conversor {
 		switch (opcion) {
 
 			case "De Pesos a Dolar": {
-				cambio = 0.00026;
-				resultado = this.calcular(valor, cambio);				
+				resultado = this.conviertePesoOtraDivisa(valor, dolar);	
 				super.mostrarMensaje("Tienes $" + resultado + " dolares");
 				break;
 			}
 			case "De Pesos a Euros": {
-				cambio = 0.00024;
-				resultado = this.calcular(valor, cambio);
+				resultado = this.conviertePesoOtraDivisa(valor, euro);
 				super.mostrarMensaje("Tienes $" + resultado + " euros");
 				break;
 			}
 			case "De Pesos a Libras": {
-				cambio = 0.00020;
-				resultado = this.calcular(valor, cambio);
+				resultado = this.conviertePesoOtraDivisa(valor, libra);
 				super.mostrarMensaje("Tienes $" + resultado + " libras");
 				break;
 			}
 			case "De Pesos a Yen": {
-				cambio = 0.033;
-				resultado = this.calcular(valor, cambio);
+				resultado = this.conviertePesoOtraDivisa(valor, yen);
 				super.mostrarMensaje("Tienes $" + resultado + " yen");
 				break;
 			}
 			case "De Pesos a Won coreano": {
-				cambio = 0.32;
-				resultado = this.calcular(valor, cambio);
+				resultado = this.conviertePesoOtraDivisa(valor, won);
 				super.mostrarMensaje("Tienes $" + resultado + " won coreano");
 				break;
 			}
 			case "De Dolar a Pesos": {
-				cambio = 3922.50;
-				resultado = this.calcular(valor, cambio);
+				resultado = this.convierteOtraDivisaPeso(valor, dolar);
 				super.mostrarMensaje("Tienes $" + resultado + " pesos");
 				break;
 			}
 			case "De Euros a Pesos": {
-				cambio = 4209.69;
-				resultado = this.calcular(valor, cambio);
+				resultado = this.convierteOtraDivisaPeso(valor, euro);
 				super.mostrarMensaje("Tienes $" + resultado + " pesos");
 				break;
 			}
 			case "De libras a Pesos": {
-				cambio = 4953.76;
-				resultado = this.calcular(valor, cambio);
+				resultado = this.convierteOtraDivisaPeso(valor, libra);
 				super.mostrarMensaje("Tienes $" + resultado + " pesos");
 				break;
 			}
 			case "De Yen a Pesos": {
-				cambio = 30.85;
-				resultado = this.calcular(valor, cambio);
+				resultado = this.convierteOtraDivisaPeso(valor, yen);
 				super.mostrarMensaje("Tienes $" + resultado + " pesos");
 				break;
 			}
 			case "De Won coreano a Pesos": {
-				cambio = 3.12;
-				resultado = this.calcular(valor, cambio);
+				resultado = this.convierteOtraDivisaPeso(valor, won);
 				super.mostrarMensaje("Tienes $" + resultado + " pesos");
 				break;
 			}
