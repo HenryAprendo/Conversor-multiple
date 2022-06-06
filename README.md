@@ -10,6 +10,8 @@ Convierte peso colombiano a varias divisas como dolar, euro, libra, yen y won co
 # Temperatura
 Convierte temperatura a grados centigrados, fahrenheit, kelvin y rankine.
 
+# Implementación
+Descargar proyecto y ejecutar el archivo ejecutable "conversor-ejecutable.jar". 
 
 
 
